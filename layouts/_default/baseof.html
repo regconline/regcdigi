@@ -12,6 +12,7 @@
     
     {{ partial "footer.html" . }}
     
+    <script src="/js/alpine.min.js" defer></script>
     {{ $js := resources.Get "js/main.js" | minify }}
     <script src="{{ $js.RelPermalink }}"></script>
 </body>
