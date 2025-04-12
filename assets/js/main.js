@@ -28,10 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', htmlElement.classList.contains('dark') ? 'dark' : 'light');
   });
 
-  // Initialize AlpineJS components
-  if (typeof Alpine !== 'undefined') {
-    Alpine.start();
-  }
+  // Alpine is initialized automatically
+  // Alpine.js is loaded separately in baseof.html
 
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
