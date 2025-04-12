@@ -36,7 +36,7 @@
 
 </head>
 <body class="bg-white dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300">
-    <header x-data="{ mobileMenuOpen: false }" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
     <div class="container mx-auto px-4 md:px-8">
         <div class="flex items-center justify-between py-4">
             
@@ -87,19 +87,16 @@
 </button>
 
                 
-                <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-gray-900 dark:text-white focus:outline-none" id="mobile-menu-button">
-                    <svg x-show="!mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <button class="md:hidden text-gray-900 dark:text-white focus:outline-none" id="mobile-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
-                    <svg x-show="mobileMenuOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display: none;">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
         </div>
         
         
-        <div x-show="mobileMenuOpen" @click.away="mobileMenuOpen = false" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="md:hidden bg-white dark:bg-gray-900 rounded-lg shadow-lg absolute left-4 right-4 top-20 p-6 z-20" style="display: none;" id="mobile-menu">
+        <div class="md:hidden bg-white dark:bg-gray-900 rounded-lg shadow-lg absolute left-4 right-4 top-20 p-6 z-20 hidden" id="mobile-menu">
             <nav class="flex flex-col space-y-4">
                 
                 
@@ -139,18 +136,27 @@
     <main class="min-h-screen">
         
 
-<section class="relative overflow-hidden py-20 lg:py-32 bg-gradient-to-r from-purple-600 to-indigo-600 text-white">
-    <div class="absolute inset-0 bg-black opacity-10 z-0"></div>
+<section class="relative overflow-hidden py-20 lg:py-32 text-white hero-gradient">
+    
+    <div class="absolute inset-0 bg-gradient-to-br from-purple-700 via-indigo-600 to-purple-600 z-0 animate-gradient-xy"></div>
+    
+    
+    <div class="absolute inset-0 overflow-hidden opacity-10 z-0">
+        <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-white rounded-full mix-blend-overlay filter blur-3xl animate-float"></div>
+        <div class="absolute top-1/2 right-1/4 w-96 h-96 bg-purple-300 rounded-full mix-blend-overlay filter blur-3xl animate-float-delay"></div>
+        <div class="absolute bottom-0 left-1/3 w-80 h-80 bg-indigo-300 rounded-full mix-blend-overlay filter blur-3xl animate-float-slow"></div>
+    </div>
+    
     <div class="container mx-auto px-4 md:px-8 relative z-10">
         <div class="max-w-5xl mx-auto text-center">
             <div class="flex justify-center mb-6">
-                <img src="/images/logo.svg" alt="ReGc Digital" class="h-14 w-auto">
+                <img src="/images/logo.svg" alt="ReGc Digital" class="h-14 w-auto drop-shadow-lg">
             </div>
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Modern Digital Solutions for Growing Businesses</h1>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-shadow">Modern Digital Solutions for Growing Businesses</h1>
             <p class="text-xl md:text-2xl opacity-90 mb-10">We build high-converting websites and powerful digital marketing strategies that drive real business results.</p>
             <div class="flex flex-col sm:flex-row justify-center gap-4">
                 <a href="/services/" class="btn-primary">Explore Our Services</a>
-                <a href="/contact/" class="btn bg-white text-purple-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium shadow-md hover:shadow-lg transition">Contact Us</a>
+                <a href="/contact/" class="bg-white/90 text-purple-600 hover:bg-white px-6 py-3 rounded-lg font-medium shadow-lg hover:shadow-xl transition backdrop-blur-sm">Contact Us</a>
             </div>
         </div>
     </div>
@@ -497,7 +503,6 @@
 </footer>
 
     
-    <script src="/js/alpine.min.js" defer></script>
     
     <script src="/js/main.min.js"></script>
 </body>

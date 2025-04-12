@@ -43,6 +43,62 @@ h1, h2, h3, h4, h5, h6, .brand {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
 }
 
+/* Text shadow for better readability on gradient backgrounds */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animated gradient background */
+.animate-gradient-xy {
+  background-size: 200% 200%;
+  animation: gradient-xy 15s ease infinite;
+}
+
+@keyframes gradient-xy {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Floating animation for background elements */
+.animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: float 15s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.animate-float-slow {
+  animation: float 25s ease-in-out infinite;
+  animation-delay: 5s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-20px) translateX(20px);
+  }
+  50% {
+    transform: translateY(-35px) translateX(-20px);
+  }
+  75% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  100% {
+    transform: translateY(0px) translateX(0px);
+  }
+}
+
 /* Custom button styles */
 .btn-primary {
   @apply px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition duration-300 shadow-md hover:shadow-lg;
