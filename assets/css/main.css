@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --color-primary: #635bff;
+  --color-secondary: #24292e;
+  --color-accent: #79b8ff;
+  --color-text: #24292e;
+  --color-text-secondary: #6a737d;
+  --color-background: #ffffff;
+  --color-background-secondary: #f6f8fa;
+  --color-border: #e1e4e8;
+  --font-primary: 'Josefin Sans', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+}
+
+.dark {
+  --color-primary: #6e71f5;
+  --color-secondary: #0d1117;
+  --color-accent: #58a6ff;
+  --color-text: #f0f6fc;
+  --color-text-secondary: #8b949e;
+  --color-background: #0d1117;
+  --color-background-secondary: #161b22;
+  --color-border: #30363d;
+}
+
+body {
+  font-family: var(--font-secondary);
+  color: var(--color-text);
+  background-color: var(--color-background);
+  transition: background-color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6, .brand {
+  font-family: var(--font-primary);
+}
+
+.hero-gradient {
+  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white font-medium rounded-lg transition duration-300 shadow-md hover:shadow-lg;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 text-gray-800 dark:text-white font-medium rounded-lg transition duration-300 shadow-md hover:shadow-lg;
+}
+
+/* Card styles */
+.card {
+  @apply bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden;
+}
+
+/* Custom animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Service card */
+.service-card {
+  @apply p-6 rounded-xl transition-all duration-300 hover:scale-105;
+}
+
+/* Blog card */
+.blog-card {
+  @apply overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300;
+}

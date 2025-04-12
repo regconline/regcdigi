@@ -1,0 +1,58 @@
+baseURL = "https://regconline.co.za/"
+languageCode = "en-us"
+title = "ReGc Digital Services"
+enableRobotsTXT = true
+
+[params]
+  description = "A full-stack digital marketing agency providing web design and development using modern technologies for high-converting sites that are AI optimized."
+  mainFont = "Josefin Sans"
+  secondaryFont = "Inter"
+  logo = "/images/logo.svg"
+  email = "info@regconline.co.za"
+  phone = "0640826855"
+  whatsapp = "0640826855"
+  facebook = "regconline1"
+  instagram = "regconline"
+  twitter = "regconline"
+  linkedin = "regconline"
+  establishedYear = "2020"
+  mission = "Offer value to our clients through cutting-edge digital marketing solutions."
+  vision = "Increase sales for our clients through innovative digital strategies and technologies."
+
+[menu]
+  [[menu.main]]
+    name = "Home"
+    url = "/"
+    weight = 1
+  [[menu.main]]
+    name = "Services"
+    url = "/services/"
+    weight = 2
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 3
+  [[menu.main]]
+    name = "Budget"
+    url = "/budget/"
+    weight = 4
+  [[menu.main]]
+    name = "Blog"
+    url = "/blog/"
+    weight = 5
+  [[menu.main]]
+    name = "Contact"
+    url = "/contact/"
+    weight = 6
+
+[markup]
+  [markup.highlight]
+    style = "github"
+  [markup.goldmark.renderer]
+    unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML"]
+  term = ["HTML"]

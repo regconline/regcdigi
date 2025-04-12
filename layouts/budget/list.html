@@ -1,0 +1,87 @@
+{{ define "main" }}
+<section class="py-24 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-4 md:px-8">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-8 text-center">{{ .Title }}</h1>
+            
+            <div class="prose dark:prose-invert lg:prose-lg max-w-none mb-12">
+                {{ .Content }}
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="mt-20">
+                <h2 class="text-2xl font-bold mb-8 text-center">Frequently Asked Questions</h2>
+                
+                <div class="space-y-6" x-data="{selected:0}">
+                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden">
+                        <button @click="selected !== 1 ? selected = 1 : selected = null" class="flex items-center justify-between w-full p-5 font-medium text-left">
+                            <span>How do you determine pricing for projects?</span>
+                            <svg :class="{'rotate-180': selected === 1}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div x-show="selected === 1" class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <p class="text-gray-600 dark:text-gray-400">We determine pricing based on several factors including project scope, timeline, complexity, and required resources. While we provide standard pricing for common services, we create custom quotes for projects with unique requirements.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden">
+                        <button @click="selected !== 2 ? selected = 2 : selected = null" class="flex items-center justify-between w-full p-5 font-medium text-left">
+                            <span>Do you offer package discounts?</span>
+                            <svg :class="{'rotate-180': selected === 2}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div x-show="selected === 2" class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <p class="text-gray-600 dark:text-gray-400">Yes, we offer discounted rates for clients who choose to bundle multiple services together. Our packages are designed to provide comprehensive solutions while offering better value than purchasing individual services.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden">
+                        <button @click="selected !== 3 ? selected = 3 : selected = null" class="flex items-center justify-between w-full p-5 font-medium text-left">
+                            <span>What payment methods do you accept?</span>
+                            <svg :class="{'rotate-180': selected === 3}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div x-show="selected === 3" class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <p class="text-gray-600 dark:text-gray-400">We accept various payment methods including bank transfers, credit cards, and PayPal. For larger projects, we typically require a 50% deposit upfront, with the remaining balance due upon completion.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden">
+                        <button @click="selected !== 4 ? selected = 4 : selected = null" class="flex items-center justify-between w-full p-5 font-medium text-left">
+                            <span>Do you offer ongoing maintenance plans?</span>
+                            <svg :class="{'rotate-180': selected === 4}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div x-show="selected === 4" class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <p class="text-gray-600 dark:text-gray-400">Yes, we offer monthly maintenance plans for websites and digital marketing services. These plans include regular updates, security monitoring, content updates, and performance optimization at a discounted monthly rate.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white dark:bg-gray-900 rounded-lg shadow-md overflow-hidden">
+                        <button @click="selected !== 5 ? selected = 5 : selected = null" class="flex items-center justify-between w-full p-5 font-medium text-left">
+                            <span>How do revisions and change requests work?</span>
+                            <svg :class="{'rotate-180': selected === 5}" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <div x-show="selected === 5" class="p-5 border-t border-gray-200 dark:border-gray-700">
+                            <p class="text-gray-600 dark:text-gray-400">Our project quotes typically include a specific number of revision rounds. Minor changes within the project scope are accommodated, while significant changes that alter the project scope may require additional charges. We always discuss any potential additional costs before proceeding.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- CTA -->
+            <div class="mt-20 bg-white dark:bg-gray-900 p-8 md:p-12 rounded-xl shadow-md text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">Need a Custom Quote?</h2>
+                <p class="text-gray-600 dark:text-gray-400 mb-8">Contact us for a personalized quote tailored to your specific project requirements and business goals.</p>
+                <a href="/contact/" class="btn-primary">Request a Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

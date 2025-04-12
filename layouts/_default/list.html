@@ -1,0 +1,41 @@
+{{ define "main" }}
+<section class="py-24 bg-gray-50 dark:bg-gray-800">
+    <div class="container mx-auto px-4 md:px-8">
+        <div class="max-w-5xl mx-auto">
+            <h1 class="text-4xl lg:text-5xl font-bold mb-8 text-center">{{ .Title }}</h1>
+            <div class="prose dark:prose-invert lg:prose-lg max-w-none">
+                {{ .Content }}
+            </div>
+            
+            {{ if eq .Type "blog" }}
+            <div class="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {{ range .Pages }}
+                <article class="blog-card bg-white dark:bg-gray-900">
+                    <a href="{{ .Permalink }}" class="block">
+                        <div class="p-6">
+                            <h2 class="text-xl font-bold mb-3 hover:text-purple-600 dark:hover:text-purple-400 transition">{{ .Title }}</h2>
+                            <div class="text-sm text-gray-600 dark:text-gray-400 mb-3">{{ .Date.Format "January 2, 2006" }}</div>
+                            <p class="text-gray-700 dark:text-gray-300">{{ .Description }}</p>
+                            <div class="mt-4 text-purple-600 dark:text-purple-400 font-medium">Read more →</div>
+                        </div>
+                    </a>
+                </article>
+                {{ end }}
+            </div>
+            {{ else }}
+            <div class="mt-8 space-y-8">
+                {{ range .Pages }}
+                <article class="bg-white dark:bg-gray-900 p-6 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-bold mb-2">
+                        <a href="{{ .Permalink }}" class="hover:text-purple-600 dark:hover:text-purple-400 transition">{{ .Title }}</a>
+                    </h2>
+                    <p class="text-gray-700 dark:text-gray-300">{{ .Description }}</p>
+                    <a href="{{ .Permalink }}" class="inline-block mt-4 text-purple-600 dark:text-purple-400 font-medium">Read more →</a>
+                </article>
+                {{ end }}
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
